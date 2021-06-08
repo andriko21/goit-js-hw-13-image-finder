@@ -11,19 +11,11 @@
 </head>
 
 <body>
-  <a class="link-pixabay" href="https://pixabay.com/">
-    <img src="https://pixabay.com/static/img/public/medium_rectangle_a.png" alt="Pixabay">
-  </a>
-  <form class="search-form" id="search-form">
-    <input class="input" type="text" name="query" autocomplete="off" placeholder="Search images..." />
-    <button class="button submit" type="submit">Look for</button>
-  </form>
-  <ul class="list"></ul>
-  <button class="btn-load button" id="btn-load" hidden='true'><span class="load-button">
-      <div id='spin'></div>Loading
-    </span><span class="download-button" hidden='true'>Download more</span></div>
-  </button>
-
+  <include src="./partials/form.html"></include>
+  <ul class="gallery">
+    <!-- Список <li> с карточками изображений -->
+  </ul>
+  <button type="button" class="button-more" id="my-element-selector">More</button>
   <script src="./index.js"></script>
 </body>
 
