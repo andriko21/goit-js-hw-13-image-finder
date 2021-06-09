@@ -23,6 +23,7 @@ function onSearch(event) {
   apiService.query = event.currentTarget.elements.query.value.trim();
   apiService.resetPage();
   apiService.requestOnUrl().then(renderCard);
+  refs.gallery.innerHTML = ''
 }
 
 function onLoadMore() {

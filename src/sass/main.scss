@@ -4,4 +4,88 @@
  */
 
 // Стили для файла с примером HTML-фрагмента
-@import './example';
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: beige;
+  padding: 40px 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+li {
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+li:hover {
+  transform: scale(1.1);
+}
+
+.button-serch {
+  background-color: rgb(255, 97, 97);
+  border-radius: 5px;
+  padding: 5px 30px;
+  transition: all linear 250ms;
+}
+
+.button-serch:hover {
+  background-color: rgb(213, 255, 149);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border: 2px solid rgb(213, 255, 149);
+  border-radius: 5px;
+  padding: 5px 10px 5px 5px;
+}
+
+.photo-card {
+  margin: 15px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+img {
+  width: 450px;
+  height: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  background-size: contain;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+}
+
+.material-icons {
+  margin-right: 10px;
+  color: grey;
+}
+
+.button-more {
+  background-color: rgb(255, 97, 97);
+  border-radius: 5px;
+  padding: 5px 30px;
+  transition: all linear 250ms;
+}
+
+.button-more:hover {
+  background-color: rgb(213, 255, 149);
+}
