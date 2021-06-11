@@ -43,9 +43,17 @@ form {
 }
 
 input {
+  margin-right: 5px;
   border: 2px solid rgb(213, 255, 149);
   border-radius: 5px;
   padding: 5px 10px 5px 5px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input:focus {
+  border-color: #ddff80;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(213, 255, 149);
 }
 
 .photo-card {
@@ -80,6 +88,7 @@ img {
 }
 
 .button-more {
+  display: block;
   background-color: rgb(255, 97, 97);
   border-radius: 5px;
   padding: 5px 30px;
@@ -88,4 +97,8 @@ img {
 
 .button-more:hover {
   background-color: rgb(213, 255, 149);
+}
+
+.is-hidden {
+  display: none;
 }

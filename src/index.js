@@ -1,21 +1,12 @@
 import './sass/main.scss';
-import Refs from './js/refs.js'; 
-import ApiService from './js/apiService'
-import cardTpl from './templates/card.hbs'
-const apiService = new ApiService;
+import Refs from './js/refs.js';
+import ApiService from './js/apiService';
+import cardTpl from './templates/card.hbs';
+const apiService = new ApiService();
 const refs = Refs();
 
-// refs.input.addEventListener('input', debounce(indetifyValue, 700));
-
-// function indetifyValue(ev) {
-//   const textOfInput = ev.target.value.trim();
-//   if (textOfInput.length < 1) {
-//     return console.log(error);
-//   }
-//   return console.log(textOfInput)
-// }
 refs.searchForm.addEventListener('submit', onSearch);
-refs.moreBtn.addEventListener('click', onLoadMore)
+refs.buttonMore.addEventListener('click', onLoadMore);
 
 function onSearch(event) {
   event.preventDefault();
@@ -23,19 +14,22 @@ function onSearch(event) {
   apiService.query = event.currentTarget.elements.query.value.trim();
   apiService.resetPage();
   apiService.requestOnUrl().then(renderCard);
-  refs.gallery.innerHTML = ''
+  refs.buttonMore.classList.remove('is-hidden');
+
+  refs.gallery.innerHTML = '';
 }
 
 function onLoadMore() {
-  apiService.requestOnUrl().then(renderCard);
+  apiService.requestOnUrl().then(renderCard).then(scroll);
+}
 
+function scroll() {
   refs.loadBtn.scrollIntoView({
-    behavior: 'smooth',
-    block: 'end',
+    block: "start", behavior: "smooth"
   });
 }
 
 function renderCard(data) {
-  const card = cardTpl(data)
-  refs.gallery.insertAdjacentHTML('beforeend', card)
+  const card = cardTpl(data);
+  refs.gallery.insertAdjacentHTML('beforeend', card);
 }
